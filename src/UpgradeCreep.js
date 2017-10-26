@@ -10,7 +10,7 @@ module.exports = {
         if(result == ERR_NOT_IN_RANGE) {
             creep.moveTo(target);
         } else if (total == 0){
-            creep.memory.role = CreepRoles.HARVESTER;
+            creep.memory.role = CreepRoles.HARVESTER();
         }
     }
 };
