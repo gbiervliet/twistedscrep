@@ -28,10 +28,12 @@ var CreepHandler = {
         var creep = creepVal;
         const creepRole = creep.memory.role;
 
-        if(creepRole == CreepRoles.HARVESTER) {
+        if(creepRole === CreepRoles.HARVESTER || creepRole == 'harvester') {
             HarvestCreep.run(creep, spawn);
-        } else if(creepRole == CreepRoles.UPGRADER) {
+        } else if(creepRole === CreepRoles.UPGRADER || creepRole == 'upgrader') {
             UpgradeCreep.run(creep, spawn);
+        } else {
+            creep.memory.role = CreepRoles.HARVESTER;
         }
     }
 };
