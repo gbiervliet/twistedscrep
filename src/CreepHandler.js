@@ -1,14 +1,15 @@
 var spawn = Game.spawns['Base'];
 
-const HARVESTER = 'harvester';
+
 
 let HarvestCreep = require('HarvestCreep');
 let UpgradeCreep = require('UpgradeCreep');
+let CreepRoles = require('CreepRoles');
 
 var CreepHandler = {
 
     createCreep() {
-        var harvesters = _.filter(Game.creeps, {memory: {role:HARVESTER}});
+        var harvesters = _.filter(Game.creeps, {memory: {role:CreepRoles.HARVESTER}});
         var harvesterCount = _.size(harvesters);
 
         console.log(harvesterCount);
@@ -27,9 +28,9 @@ var CreepHandler = {
         var creep = creepVal;
         const creepRole = creep.memory.role;
 
-        if(creepRole == HARVESTER) {
+        if(creepRole == CreepRoles.HARVESTER) {
             HarvestCreep.run(creep, spawn);
-        } else if(creepRole == 'upgrader') {
+        } else if(creepRole == CreepRoles.UPGRADER) {
             UpgradeCreep.run(creep, spawn);
         }
     }

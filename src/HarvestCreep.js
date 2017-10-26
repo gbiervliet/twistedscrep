@@ -1,3 +1,6 @@
+
+var CreepRoles = require('CreepRoles');
+
 module.exports = {
     run: function(creep, spawn) {
 
@@ -6,7 +9,7 @@ module.exports = {
         var result =  creep.transfer(spawn, RESOURCE_ENERGY);
 
         if(result == ERR_FULL) {
-            creep.memory.role = 'upgrader';
+            creep.memory.role = CreepRoles.UPGRADER;
             return;
         }
         if(total >= 22 && result == ERR_NOT_IN_RANGE) {

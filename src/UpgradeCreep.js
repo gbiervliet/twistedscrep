@@ -1,3 +1,5 @@
+var CreepRoles = require('CreepRoles');
+
 module.exports = {
     run: function(creep, spawn) {
 
@@ -8,7 +10,7 @@ module.exports = {
         if(result == ERR_NOT_IN_RANGE) {
             creep.moveTo(target);
         } else if (total == 0){
-            creep.memory.role = 'harvester';
+            creep.memory.role = CreepRoles.HARVESTER;
         }
     }
 };
