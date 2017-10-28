@@ -19,10 +19,8 @@ var CreepHandler = {
         });
     },
 
-    handleCreepAction(creepVal) {
-        let creep = creepVal;
+    handleCreepAction(creep) {
         const creepRole = creep.memory.role;
-
         switch(creepRole){
             case CreepRoles.HARVESTER():
                 HarvestCreep.run(creep, spawn);
