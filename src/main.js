@@ -15,4 +15,9 @@ module.exports.loop = function() {
     if(harvesterCount < 6) {
         creepHandler.createCreep();
     }
+    for(let i in Memory.creeps) {
+        if(!Game.creeps[i]) {
+            delete Memory.creeps[i];
+        }
+    }
 };

@@ -8,7 +8,7 @@ module.exports = {
         const total = _.sum(creep.carry);
         var result =  creep.transfer(spawn, RESOURCE_ENERGY);
 
-        if(result == ERR_FULL) {
+        if(result === ERR_FULL) {
             if(Object.keys(Game.constructionSites).length >0) {
                 creep.memory.role = CreepRoles.BUILDER();
             } else {
@@ -16,10 +16,10 @@ module.exports = {
             }
             return;
         }
-        if(total >= 22 && result == ERR_NOT_IN_RANGE) {
+        if(total >= 22 && result === ERR_NOT_IN_RANGE) {
             creep.moveTo(spawn);
         } else if(target) {
-            if(creep.harvest(target) == ERR_NOT_IN_RANGE) {
+            if(creep.harvest(target) === ERR_NOT_IN_RANGE) {
                 creep.moveTo(target);
             }
         }
