@@ -1,11 +1,10 @@
 var creepHandler = require('CreepHandler');
 var CreepRoles = require('CreepRoles');
-require('BuilderCreep')();
 
 module.exports.loop = function() {
     // executed every tick
     for(var c in Game.creeps) {
-        var creep = Game.creeps[c];
+        var creep = Game.creeps[c];x``
         creepHandler.handleCreepAction(creep);
 
     }
