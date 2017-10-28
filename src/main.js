@@ -7,5 +7,11 @@ module.exports.loop = function() {
         creepHandler.handleCreepAction(creep);
 
     }
-    creepHandler.createCreep();
+
+    var harvesters = _.filter(Game.creeps, {memory: {role:CreepRoles.HARVESTER()}});
+    var harvesterCount = _.size(harvesters);
+
+    if(harvesterCount < 6) {
+        creepHandler.createCreep();
+    }
 };
