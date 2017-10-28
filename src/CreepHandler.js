@@ -14,7 +14,7 @@ var CreepHandler = {
         spawn.spawnCreep([CARRY, WORK, MOVE], uniqueId, {
             memory: {
                 role: CreepRoles.HARVESTER(),
-                harvestLocation: getLocation()
+                harvestLocation: getLocation(spawn)
             }
         });
     },
@@ -37,13 +37,13 @@ var CreepHandler = {
     }
 };
 
-getLocation = function() {
+getLocation = function(spawn) {
     if(Game.creeps.length %2 == 0) {
-        console.log('going to source ' + Room.sources[1]);
-        return Room.sources[0];
+        console.log('going to source ' + spawn.room.sources[0]);
+        return spawn.room.sources[0];
     } else {
-        console.log('going to source ' + Room.sources[1]);
-        return room.sources[1]
+        console.log('going to source ' + spawn.room.sources[1]);
+        return spawn.room.sources[1]
     }
 }
 
