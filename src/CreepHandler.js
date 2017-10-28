@@ -13,7 +13,8 @@ var CreepHandler = {
         let uniqueId = Math.random().toString(36).substring(2) + (new Date()).getTime().toString(36);
         spawn.spawnCreep([CARRY, WORK, MOVE], uniqueId, {
             memory: {
-                role: CreepRoles.HARVESTER()
+                role: CreepRoles.HARVESTER(),
+                harvestLocation: getLocation();
             }
         });
     },
@@ -35,5 +36,13 @@ var CreepHandler = {
         }
     }
 };
+
+getLocation = function() {
+    if(Game.creeps.length %2 == 0) {
+        return Game.resources[0];
+    } else {
+        return Game.resources[1];
+    }
+}
 
 module.exports = CreepHandler;
