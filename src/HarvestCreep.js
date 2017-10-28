@@ -9,7 +9,11 @@ module.exports = {
         var result =  creep.transfer(spawn, RESOURCE_ENERGY);
 
         if(result == ERR_FULL) {
-            creep.memory.role = CreepRoles.UPGRADER();
+            if(Game.constructionSites.length >0) {
+                creep.memory.role = CreepRoles.BUILDER();
+            } else {
+                creep.memory.role = CreepRoles.UPGRADER();
+            }
             return;
         }
         if(total >= 22 && result == ERR_NOT_IN_RANGE) {
