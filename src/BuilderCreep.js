@@ -3,7 +3,7 @@ var CreepRoles = require('CreepRoles');
 module.exports = {
 
     run(creep) {
-        let constuctionSites = Game.constructionSites;
+        let constuctionSites = Object.keys(Game.constructionSites);
 
         if(constuctionSites.length != 0) {
             let site = constuctionSites.get(0);

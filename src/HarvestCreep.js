@@ -9,7 +9,7 @@ module.exports = {
         var result =  creep.transfer(spawn, RESOURCE_ENERGY);
 
         if(result == ERR_FULL) {
-            if(Game.constructionSites.length >0) {
+            if(Object.keys(Game.constructionSites).length >0) {
                 creep.memory.role = CreepRoles.BUILDER();
             } else {
                 creep.memory.role = CreepRoles.UPGRADER();
