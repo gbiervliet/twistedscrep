@@ -1,5 +1,6 @@
 var creepHandler = require('CreepHandler');
 var CreepRoles = require('CreepRoles');
+require('RoomPrototype')();
 
 module.exports.loop = function() {
     // executed every tick
@@ -15,6 +16,7 @@ module.exports.loop = function() {
     if(harvesterCount < 6) {
         creepHandler.createCreep();
     }
+
     for(let i in Memory.creeps) {
         if(!Game.creeps[i]) {
             delete Memory.creeps[i];
