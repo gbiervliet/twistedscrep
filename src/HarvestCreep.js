@@ -3,7 +3,10 @@ var CreepRoles = require('CreepRoles');
 module.exports = {
     run: function (creep, spawn) {
 
-        const target = creep.pos.findClosestByPath(creep.memory.harvestLocation);
+        let target = creep.pos.findClosestByPath(creep.memory.harvestLocation);
+        if(target === null){
+            target = creep.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
+        }
         const total = _.sum(creep.carry);
         let result = creep.transfer(spawn, RESOURCE_ENERGY);
 

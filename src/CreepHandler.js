@@ -39,8 +39,10 @@ var CreepHandler = {
 
 getLocation = function() {
     if(Game.creeps.length %2 == 0) {
+        console.log('going to source ' + Game.resources[0]);
         return Game.resources[0];
     } else {
+        console.log('going to source ' + Game.resources[1]);
         return Game.resources[1];
     }
 }
