@@ -2,8 +2,7 @@ var CreepRoles = require('CreepRoles');
 
 module.exports = {
     run: function (creep, spawn) {
-
-        let target = creep.pos.findClosestByPath(creep.memory.harvestLocation);
+        let target = Game.getObjectById(creep.memory.harvestLocation);
         if(target === null){
             target = creep.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
         }
@@ -11,7 +10,7 @@ module.exports = {
         let result = creep.transfer(spawn, RESOURCE_ENERGY);
 
         if (result === ERR_FULL) {
-            if (Object.keys(Game.constructionSites).length > 0) {
+            if (Object.keys(Game.constructionSites).length > 0 && creep.memory.harvestLocation == spawn.room.sources[1]) {
                 creep.memory.role = CreepRoles.BUILDER();
             } else {
                 creep.memory.role = CreepRoles.UPGRADER();

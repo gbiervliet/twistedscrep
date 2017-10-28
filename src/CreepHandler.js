@@ -38,12 +38,12 @@ var CreepHandler = {
 };
 
 getLocation = function(spawn) {
-    if(Game.creeps.length %2 == 0) {
-        console.log('going to source ' + spawn.room.sources[0]);
-        return spawn.room.sources[0];
+    if(_.size(Game.creeps) %2 == 0) {
+        console.log('going to source ' + spawn.room.sources[0].id);
+        return spawn.room.sources[0].id;
     } else {
-        console.log('going to source ' + spawn.room.sources[1]);
-        return spawn.room.sources[1]
+        console.log('going to source ' + spawn.room.sources[1].id);
+        return spawn.room.sources[1].id;
     }
 }
 

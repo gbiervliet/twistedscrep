@@ -5,7 +5,7 @@ require('RoomPrototype')();
 module.exports.loop = function() {
     // executed every tick
     for(let c in Game.creeps) {
-        let creep = Game.creeps[c];
+        let creep = [c];
         creepHandler.handleCreepAction(creep);
 
     }
