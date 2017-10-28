@@ -14,7 +14,7 @@ var CreepHandler = {
         spawn.spawnCreep([CARRY, WORK, MOVE], uniqueId, {
             memory: {
                 role: CreepRoles.HARVESTER(),
-                harvestLocation: getLocation();
+                harvestLocation: getLocation()
             }
         });
     },
