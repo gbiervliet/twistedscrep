@@ -1,4 +1,6 @@
 var creepHandler = require('CreepHandler');
+var CreepRoles = require('CreepRoles');
+require('BuilderCreep')();
 
 module.exports.loop = function() {
     // executed every tick

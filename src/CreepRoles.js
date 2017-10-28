@@ -8,7 +8,7 @@ module.exports = {
     UPGRADER() {
         return 1;
     },
-    ROADBUILDER() {
+    BUILDER() {
         return 2;
     }
 };
