@@ -7,7 +7,7 @@ module.exports = {
 
 
         const total = _.sum(creep.carry);
-        let droppingPoint = creep.transfer(getEmptyDroppingPoint(spawn);
+        let droppingPoint = creep.transfer(getEmptyDroppingPoint(spawn));
         if (droppingPoint === null) {
             if (Object.keys(Game.constructionSites).length > 0 && creep.memory.harvestLocation == spawn.room.sources[1]) {
                 creep.memory.role = CreepRoles.BUILDER();
@@ -17,7 +17,7 @@ module.exports = {
             return;
 
         }
-        
+
         let result = creep.transfer(droppingPoint, RESOURCE_ENERGY);
 
         if (total >= 22 && result === ERR_NOT_IN_RANGE) {
